@@ -20,8 +20,9 @@ ENV/
 /data/
 !/data/sample_images/
 
-# Model artifacts
+# Ignore model weights but allow labels.json
 /models/
+!/models/labels.json
 *.pt
 
 # Local runtime files
