@@ -1,3 +1,14 @@
+---
+title: "CropGuard: Leaf Disease Detector"
+emoji: 🌱
+colorFrom: green
+colorTo: lime
+sdk: gradio
+sdk_version: "4.14.0"
+app_file: app.py
+pinned: false
+---
+
 # CropGuard: Leaf Disease Detector
 
 **CropGuard** is a lightweight, deployable machine learning app that detects **leaf diseases** in **Potato**, **Tomato**, and **Grape** plants from user-uploaded or captured images.
