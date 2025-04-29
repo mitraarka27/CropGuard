@@ -56,7 +56,7 @@ CropGuard/
 1. **Clone the repo:**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/CropGuard.git
+git clone https://github.com/mitraarka27/CropGuard.git
 cd CropGuard
 ```
 
