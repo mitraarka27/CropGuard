@@ -2,38 +2,43 @@ name: Deploy to Hugging Face Spaces
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Clone this repo
-        uses: actions/checkout@v4
+    - name: Checkout GitHub repo
+      uses: actions/checkout@v4
 
-      - name: 🤖 Set up Git (inside HF Space)
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
+    - name: Install Git LFS
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git-lfs
+        git lfs install
 
-      - name: 🚀 Push to Hugging Face Space
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_SPACE_ID: ${{ secrets.HF_SPACE_ID }}
-        run: |
-          # Fresh clone of Hugging Face Space
-          git clone https://huggingface_hub:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE_ID} hf_space
+    - name: Set up Hugging Face Git credentials
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
 
-          # Clean destination (optional if HF repo is messy)
-          rm -rf hf_space/*
+    - name: Clean previous hf_space if exists
+      run: |
+        rm -rf hf_space
 
-          # Copy all project files into HF Space folder
-          cp -r * hf_space/
-          cp -r .[^.]* hf_space/ || true   # Copy hidden files like .gitignore, ignoring errors
+    - name: Clone Hugging Face Space
+      run: |
+        git clone https://huggingface_hub:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/${{ secrets.HF_SPACE_ID }} hf_space
 
-          # Commit and push
-          cd hf_space
-          git add .
-          git commit -m "🤖 Auto-update from GitHub main branch"
-          git push
+    - name: Copy project files into Space
+      run: |
+        rsync -av --exclude='.git' --exclude='hf_space' ./ hf_space/
+
+    - name: Commit and push to Hugging Face
+      run: |
+        cd hf_space
+        git add .
+        git commit -m "🤖 Auto-update from GitHub main branch" || echo "No changes to commit"
+        git push
