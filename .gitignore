@@ -1,0 +1,48 @@
+# .gitignore for CropGuard
+
+# Python files
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+
+# Environment files
+.env
+.venv/
+venv/
+ENV/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Data
+/data/
+!/data/sample_images/
+
+# Model artifacts
+/models/
+*.pt
+
+# Local runtime files
+*.log
+*.sqlite3
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Gradio temp files
+./cam_output.png
+
+# Docker files (optional caches)
+__pycache__/
+*.db
+
+# VS Code settings
+.vscode/
+
+# Other temporary files
+*.tmp
+*.bak
+*.swp
