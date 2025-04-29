@@ -1,0 +1,19 @@
+{
+    "0": "grape___Grape___Black_rot",
+    "1": "grape___Grape___Esca_(Black_Measles)",
+    "2": "grape___Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+    "3": "grape___Grape___healthy",
+    "4": "potato___Potato___Early_blight",
+    "5": "potato___Potato___Late_blight",
+    "6": "potato___Potato___healthy",
+    "7": "tomato___Tomato___Bacterial_spot",
+    "8": "tomato___Tomato___Early_blight",
+    "9": "tomato___Tomato___Late_blight",
+    "10": "tomato___Tomato___Leaf_Mold",
+    "11": "tomato___Tomato___Septoria_leaf_spot",
+    "12": "tomato___Tomato___Spider_mites Two-spotted_spider_mite",
+    "13": "tomato___Tomato___Target_Spot",
+    "14": "tomato___Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    "15": "tomato___Tomato___Tomato_mosaic_virus",
+    "16": "tomato___Tomato___healthy"
+}
