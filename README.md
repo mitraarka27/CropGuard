@@ -1,14 +1,6 @@
----
-title: "CropGuard: Leaf Disease Detector"
-colorFrom: green
-colorTo: indigo
-sdk: gradio
-sdk_version: "4.14.0"
-app_file: app.py
-pinned: false
----
-
 # CropGuard: Leaf Disease Detector
+
+Use online at HuggingFace Spaces at: https://huggingface.co/spaces/mitraarka27/CropGuard
 
 **CropGuard** is a lightweight, deployable machine learning app that detects **leaf diseases** in **Potato**, **Tomato**, and **Grape** plants from user-uploaded or captured images.
 
@@ -19,6 +11,8 @@ Built using **PyTorch**, **Gradio**, **Docker**, and **Hugging Face Spaces**, it
 - Identify likely disease (if any)
 - Visualize model attention using **GradCAM++** heatmaps
 - Provide quick disease information and treatment suggestions
+
+<img width="1154" alt="Screenshot 2025-04-28 at 4 24 27 PM" src="https://github.com/user-attachments/assets/7e8c8b53-aa62-4803-a7a9-e4398753106b" />
 
 ---
 
