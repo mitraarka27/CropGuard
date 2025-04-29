@@ -34,7 +34,8 @@ jobs:
 
     - name: Copy project files into Space
       run: |
-        rsync -av --progress ./ hf_space/ --exclude hf_space --exclude .git --exclude .github
+        mkdir -p hf_space/models
+        rsync -av --exclude='.git' --exclude='hf_space' ./ hf_space/
 
     - name: Commit and push to Hugging Face
       run: |
